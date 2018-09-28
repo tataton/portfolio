@@ -19,29 +19,21 @@ nav {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgb(0, 103, 0);
+  background-color: #c95656;
   overflow-x: hidden;
   padding-top: 20px;
 }
 
-.nav-avatar-border {
-  width: 158px;
-  height: 158px;
-  margin: 0 auto;
-  background-color: #8f4f00;
-  position: relative;
-  clip-path: path(
-    'M 0.554 0.03125 L 0.879 0.21875 Q 0.933 0.25 0.933 0.3125 L 0.933 0.6875 Q 0.933 0.75 0.879 0.78125 L 0.554 0.96875 Q 0.5 1 0.446 0.96875 L 0.121 0.78125 Q 0.067 0.75 0.067 0.6875 L 0.067 0.3125 Q 0.067 0.25 0.121 0.21875 L 0.446 0.03125 Q 0.5 0 0.554 0.03125 Z'
-  );
+/* Colors: Dusky red: #c95656
+           Matte blue: #2d4d7d */
+
+section.content-1 {
+  background-color: #f29999;
 }
-.nav-avatar-image {
-  background-image: url('../img/avatar.jpg');
-  background-size: cover;
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  clip-path: path(
-    'M 0.554 0.03125 L 0.879 0.21875 Q 0.933 0.25 0.933 0.3125 L 0.933 0.6875 Q 0.933 0.75 0.879 0.78125 L 0.554 0.96875 Q 0.5 1 0.446 0.96875 L 0.121 0.78125 Q 0.067 0.75 0.067 0.6875 L 0.067 0.3125 Q 0.067 0.25 0.121 0.21875 L 0.446 0.03125 Q 0.5 0 0.554 0.03125 Z'
-  );
-  margin: 4px;
+
+.nav-photo-div {
+  position: relative;
+  margin: 0 auto;
+  width: 180px;
+  height: 180px;
 }
