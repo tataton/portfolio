@@ -20,6 +20,7 @@ nav {
   height: 100%;
   width: 200px;
   overflow-x: hidden;
+  color: white;
 }
 
 .nav-panel {
@@ -31,13 +32,22 @@ nav {
 }
 
 .nav-panel-software {
-  left: 0;
   background-color: #2d4d7d;
 }
 
 .nav-panel-chemistry {
-  left: -200px;
   background-color: #b13c3c;
+}
+
+.nav-panel-visible {
+  left: 0;
+  transition: left 1s ease;
+  z-index: 2;
+}
+
+.nav-panel-hidden {
+  left: -200px;
+  transition: left 1s ease;
 }
 
 svg.nav-photo {
@@ -45,13 +55,31 @@ svg.nav-photo {
   margin: 0 auto;
 }
 
+.nav-panel-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.nav-panel-contact {
+  text-align: center;
+  font-size: 18px;
+}
+
+.nav-panel-contact > a {
+  color: white;
+  text-decoration: none;
+}
+
 .nav-chooser {
   position: fixed;
-  top: 220px;
+  bottom: 0px;
   left: 0px;
   width: 200px;
   font-size: 18px;
   text-align: center;
+  z-index: 3;
 }
 
 .nav-chooser-content {
@@ -63,14 +91,16 @@ svg.nav-photo {
   font-size: 12px;
 }
 
+.nav-chooser-active {
+  cursor: pointer;
+}
+
 .nav-chooser-software {
   background-color: #2d4d7d;
-  color: white;
 }
 
 .nav-chooser-chemistry {
   background-color: #b13c3c;
-  color: white;
 }
 
 section.content-1 {

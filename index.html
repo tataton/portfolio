@@ -7,6 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie-edge">
   <meta name="description" content="T. A. Taton Portfolio">
   <meta name="author" content="T. Andrew Taton">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7"
+    crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <title>Andy Taton</title>
@@ -14,7 +20,7 @@
 
 <body>
   <nav>
-    <div class="nav-panel nav-panel-software">
+    <div class="nav-panel nav-panel-software nav-panel-visible">
       <svg class="nav-photo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         width="180" height="180">
         <defs>
@@ -24,9 +30,25 @@
         </defs>
         <image xlink:href="img/taton-software.jpg" clip-path="url(#hexagonal)" width="180" height="180" />
       </svg>
+      <div class="nav-panel-name">
+        Andy Taton
+      </div>
+      <div class="nav-panel-contact">
+        <a href="mailto:thomas.andrew.taton@gmail.com">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/tataton/">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://stackoverflow.com/users/7596425/andy-taton">
+          <i class="fab fa-stack-overflow"></i>
+        </a>
+        <a href="https://andytaton.com">
+          <i class="fas fa-globe"></i>
+        </a>
+      </div>
     </div>
-    <div class="nav-panel nav-panel-chemistry">
-
+    <div class="nav-panel nav-panel-chemistry nav-panel-hidden">
       <svg class="nav-photo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         width="180" height="180">
         <defs>
@@ -36,10 +58,16 @@
         </defs>
         <image xlink:href="img/taton-chemist.jpg" clip-path="url(#hexagonal)" width="180" height="180" />
       </svg>
+      <div class="nav-panel-name">
+        Andy Taton
+      </div>
+      <div class="nav-panel-contact">
+
+      </div>
     </div>
 
     <div class="nav-chooser">
-      <div class="nav-chooser-chemistry nav-chooser-content">
+      <div class="nav-chooser-chemistry nav-chooser-content nav-chooser-active">
         <p class="nav-chooser-prefix">I was a</p>
         <p>Chemistry Professor.</p>
       </div>
@@ -48,8 +76,8 @@
         <p>Software Engineer.</p>
       </div>
     </div>
-
   </nav>
+  <script src="js/index.js"></script>
 </body>
 
 </html>
