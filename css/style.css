@@ -29,6 +29,7 @@ nav {
   width: 200px;
   top: 0;
   padding-top: 15px;
+  line-height: 1.3;
 }
 
 .nav-panel-software {
@@ -58,18 +59,30 @@ svg.nav-photo {
 .nav-panel-name {
   font-size: 28px;
   font-weight: 700;
-  margin: 10px 0;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.nav-panel-occupation {
   text-align: center;
 }
 
 .nav-panel-contact {
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 .nav-panel-contact > a {
-  color: white;
+  display: inline-block;
+  color: #cbe0ff;
   text-decoration: none;
+  margin: 0 6px;
+}
+
+.nav-panel-contact > a:hover,
+.nav-panel-contact > a:focus {
+  color: white;
 }
 
 .nav-chooser {
@@ -93,6 +106,18 @@ svg.nav-photo {
 
 .nav-chooser-active {
   cursor: pointer;
+}
+
+.nav-chooser-active.nav-chooser-software {
+  color: #cbe0ff;
+}
+
+.nav-chooser-active.nav-chooser-chemistry {
+  color: #ffc2c2;
+}
+
+div.nav-chooser-active:hover {
+  color: white;
 }
 
 .nav-chooser-software {
