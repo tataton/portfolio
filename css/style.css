@@ -8,8 +8,9 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.5;
   background-color: #ffffff;
+  position: relative;
 }
 
 nav {
@@ -56,7 +57,7 @@ svg.nav-photo {
   margin: 0 auto;
 }
 
-.nav-panel-name {
+.nav-panel-name > h1 {
   font-size: 28px;
   font-weight: 700;
   margin-top: 10px;
@@ -75,13 +76,33 @@ svg.nav-photo {
 
 .nav-panel-contact > a {
   display: inline-block;
-  color: #cbe0ff;
+  color: #d9e7fc;
   text-decoration: none;
   margin: 0 6px;
 }
 
 .nav-panel-contact > a:hover,
 .nav-panel-contact > a:focus {
+  color: white;
+}
+
+.nav-panel-headings {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 30px;
+  text-transform: uppercase;
+}
+
+.nav-panel-headings > a {
+  display: block;
+  color: #d9e7fc;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+.nav-panel-headings > a:hover,
+.nav-panel-headings > a:focus {
   color: white;
 }
 
@@ -109,7 +130,7 @@ svg.nav-photo {
 }
 
 .nav-chooser-active.nav-chooser-software {
-  color: #cbe0ff;
+  color: #d9e7fc;
 }
 
 .nav-chooser-active.nav-chooser-chemistry {
@@ -126,6 +147,45 @@ div.nav-chooser-active:hover {
 
 .nav-chooser-chemistry {
   background-color: #b13c3c;
+}
+
+main {
+  position: absolute;
+  left: 200px;
+  color: black;
+  background-color: white;
+}
+
+main section {
+  padding: 10px 20px;
+  margin: 20px 0;
+  text-align: justify;
+}
+
+#availability {
+  background-color: #d9e7fc;
+}
+
+h2 {
+  width: 100%;
+  margin: 0.5em auto;
+  overflow: hidden;
+  text-align: center;
+  font-weight: 300;
+  color: black;
+}
+
+h2:before,
+h2:after {
+  content: '';
+  display: inline-block;
+  width: 50%;
+  margin: 0 1em 0 -55%;
+  vertical-align: middle;
+  border-bottom: 1px solid;
+}
+h2:after {
+  margin: 0 -55% 0 1em;
 }
 
 section.content-1 {

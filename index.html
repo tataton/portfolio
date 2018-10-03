@@ -19,19 +19,23 @@
 </head>
 
 <body>
+  <svg height="0">
+    <defs>
+      <clipPath id="image-hexagonal" clipPathUnits="objectBoundingBox">
+        <path d='M 0.554 0.03125 L 0.879 0.21875 Q 0.933 0.25 0.933 0.3125 L 0.933 0.6875 Q 0.933 0.75 0.879 0.78125 L 0.554 0.96875 Q 0.5 1 0.446 0.96875 L 0.121 0.78125 Q 0.067 0.75 0.067 0.6875 L 0.067 0.3125 Q 0.067 0.25 0.121 0.21875 L 0.446 0.03125 Q 0.5 0 0.554 0.03125 Z' />
+      </clipPath>
+      <clipPath id="text-hexagonal" clipPathUnits="userSpaceOnUse">
+        <path d='M 5 0 L 35 0 L 35 20 L 0 20 L 5 0 Z' />
+      </clipPath>
+    </defs>
+  </svg>
   <nav>
     <div class="nav-panel nav-panel-software nav-panel-visible">
-      <svg class="nav-photo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        width="180" height="180">
-        <defs>
-          <clipPath id="hexagonal" clipPathUnits="objectBoundingBox">
-            <path d='M 0.554 0.03125 L 0.879 0.21875 Q 0.933 0.25 0.933 0.3125 L 0.933 0.6875 Q 0.933 0.75 0.879 0.78125 L 0.554 0.96875 Q 0.5 1 0.446 0.96875 L 0.121 0.78125 Q 0.067 0.75 0.067 0.6875 L 0.067 0.3125 Q 0.067 0.25 0.121 0.21875 L 0.446 0.03125 Q 0.5 0 0.554 0.03125 Z' />
-          </clipPath>
-        </defs>
-        <image xlink:href="img/taton-software.jpg" clip-path="url(#hexagonal)" width="180" height="180" />
+      <svg class="nav-photo" xmlns="http://www.w3.org/2000/svg" width="180" height="180">
+        <image href="img/taton-software.jpg" clip-path="url(#image-hexagonal)" width="180" height="180" />
       </svg>
       <div class="nav-panel-name">
-        Andy Taton
+        <h1>Andy Taton</h1>
       </div>
       <div class="nav-panel-contact">
         <a href="mailto:thomas.andrew.taton@gmail.com">
@@ -60,17 +64,11 @@
       </div>
     </div>
     <div class="nav-panel nav-panel-chemistry nav-panel-hidden">
-      <svg class="nav-photo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        width="180" height="180">
-        <defs>
-          <clipPath id="hexagonal" clipPathUnits="objectBoundingBox">
-            <path d='M 0.554 0.03125 L 0.879 0.21875 Q 0.933 0.25 0.933 0.3125 L 0.933 0.6875 Q 0.933 0.75 0.879 0.78125 L 0.554 0.96875 Q 0.5 1 0.446 0.96875 L 0.121 0.78125 Q 0.067 0.75 0.067 0.6875 L 0.067 0.3125 Q 0.067 0.25 0.121 0.21875 L 0.446 0.03125 Q 0.5 0 0.554 0.03125 Z' />
-          </clipPath>
-        </defs>
-        <image xlink:href="img/taton-chemist.jpg" clip-path="url(#hexagonal)" width="180" height="180" />
+      <svg class="nav-photo" xmlns="http://www.w3.org/2000/svg" width="180" height="180">
+        <image href="img/taton-chemist.jpg" clip-path="url(#image-hexagonal)" width="180" height="180" />
       </svg>
       <div class="nav-panel-name">
-        Andy Taton
+        <h1>Andy Taton</h1>
       </div>
       <div class="nav-panel-contact">
 
@@ -88,9 +86,78 @@
       </div>
     </div>
   </nav>
-  <section id="skills">
-    Hi there!
-  </section>
+  <main>
+    <svg viewBox="0 0 0.4 1" class="nav-photo" xmlns="http://www.w3.org/2000/svg" width="16" height="40">
+      <path d='
+      M 0.42 1
+      L 0.3608 1
+      Q 0.2886 1 0.2526 0.938
+      L 0.0361 0.562
+      Q 0 0.5 0.0361 0.438
+      L 0.2526 0.062
+      Q 0.2886 0 0.3608 0
+      L 0.42 0
+      Z
+      ' />
+    </svg>
+    <svg viewBox="0 0 0.4 1" class="nav-photo" xmlns="http://www.w3.org/2000/svg" width="16" height="40">
+      <path d='
+      M 0 1
+      L 0.0592 1
+      Q 0.1314 1 0.1674 0.938
+      L 0.3839 0.562
+      Q 0.42 0.5 0.3839 0.438
+      L 0.1674 0.062
+      Q 0.1314 0 0.0592 0
+      L 0 0
+      Z
+      ' />
+    </svg>
+    <section id="intro">
+      <p>I'm a full-stack web developer, focused on front-end mechanics, client-server communication, authentication,
+        and back-end session and data management.</p>
+    </section>
+    <section id="availability">
+      <p><b>I'm currently available for hire!</b></p>
+      <p>If you like what you see here, and
+        you think I might be a good fit for your
+        organization (or someone else's), please let me know!</p>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      ReactJS, Redux, MobX, React-Router, TypeScript, Node.js, Express, API/REST, Authentication (Local,
+      OAuth2/3rd-party), SQL (raw, w/ Knex.js, or w/ Sequelize ORM), MongoDB, Redis, Git, JavaScript, HTML, CSS, Sass,
+      AngularJS, JQuery, Mocha, Chai, Java (SE)
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec nulla ultricies mauris dignissim consequat.
+      Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean ac turpis ut urna ultrices mollis. Fusce
+      justo urna, eleifend eu lorem quis, placerat ultricies purus. In finibus tempus dapibus. Quisque orci tortor,
+      pharetra ut placerat eget, tincidunt tincidunt enim. Maecenas et felis id lacus fermentum rhoncus vel nec augue.
+      Nunc ac dui eleifend, ultrices nibh non, blandit neque.
+
+      Donec tincidunt neque et massa dignissim, eget viverra quam aliquam. Proin ac arcu quam. Vivamus consequat semper
+      lacinia. In faucibus tortor in lorem sollicitudin maximus. Nulla congue quis libero vel tempor. Morbi feugiat est
+      elit, id accumsan ex rhoncus ac. Cras tincidunt bibendum purus, vitae malesuada justo accumsan vel. Proin finibus
+      sagittis volutpat. Quisque feugiat porta enim, sit amet sagittis leo euismod vel. Etiam non risus orci. Donec
+      dictum tincidunt molestie. Pellentesque elementum luctus arcu. Nulla urna eros, congue vitae quam at, fringilla
+      eleifend ipsum. Nullam et varius diam. Pellentesque ultrices elit vitae nulla commodo fermentum placerat vel
+      risus.
+
+      Praesent rutrum mi arcu, eget pharetra mi mattis sit amet. In dolor nunc, volutpat rutrum nulla sed, luctus
+      lobortis neque. Cras dignissim ligula vitae purus pulvinar sollicitudin. Etiam in aliquet magna. Vestibulum ante
+      ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent volutpat iaculis massa vel
+      pulvinar. Duis quis tortor id neque malesuada pharetra ut interdum mauris. Suspendisse facilisis felis nec mauris
+      convallis tincidunt. Proin purus justo, interdum quis pharetra sit amet, porttitor a leo. Suspendisse ac sem eget
+      arcu venenatis dignissim. Sed tincidunt metus neque. Fusce quis molestie tellus. Nullam vestibulum purus eget
+      elit feugiat fermentum. Praesent mauris elit, scelerisque a consequat pharetra, ultricies quis ante. Aenean sit
+      amet accumsan mauris.
+    </section>
+    <section id="education">
+      <h2>Education</h2>
+    </section>
+  </main>
   <script src="js/index.js"></script>
 </body>
 
