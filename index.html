@@ -24,14 +24,12 @@
       <clipPath id="image-hexagonal" clipPathUnits="objectBoundingBox">
         <path d='M 0.554 0.03125 L 0.879 0.21875 Q 0.933 0.25 0.933 0.3125 L 0.933 0.6875 Q 0.933 0.75 0.879 0.78125 L 0.554 0.96875 Q 0.5 1 0.446 0.96875 L 0.121 0.78125 Q 0.067 0.75 0.067 0.6875 L 0.067 0.3125 Q 0.067 0.25 0.121 0.21875 L 0.446 0.03125 Q 0.5 0 0.554 0.03125 Z' />
       </clipPath>
-      <clipPath id="text-hexagonal" clipPathUnits="userSpaceOnUse">
-        <path d='M 5 0 L 35 0 L 35 20 L 0 20 L 5 0 Z' />
-      </clipPath>
+      <path id="left-hex-bracket" d='M 0.5 0 L 0.4944 0 Q 0.35 0 0.2778 0.125 L 0.1335 0.375 Q 0.0613 0.5 0.1335 0.625 L 0.2778 0.875 Q 0.35 1 0.4944 1 L 0.5 1 Z' />
     </defs>
   </svg>
   <nav>
     <div class="nav-panel nav-panel-software nav-panel-visible">
-      <svg class="nav-photo" xmlns="http://www.w3.org/2000/svg" width="180" height="180">
+      <svg class="nav-photo" width="180" height="180">
         <image href="img/taton-software.jpg" clip-path="url(#image-hexagonal)" width="180" height="180" />
       </svg>
       <div class="nav-panel-name">
@@ -64,7 +62,7 @@
       </div>
     </div>
     <div class="nav-panel nav-panel-chemistry nav-panel-hidden">
-      <svg class="nav-photo" xmlns="http://www.w3.org/2000/svg" width="180" height="180">
+      <svg class="nav-photo" width="180" height="180">
         <image href="img/taton-chemist.jpg" clip-path="url(#image-hexagonal)" width="180" height="180" />
       </svg>
       <div class="nav-panel-name">
@@ -87,32 +85,6 @@
     </div>
   </nav>
   <main>
-    <svg viewBox="0 0 0.4 1" class="nav-photo" xmlns="http://www.w3.org/2000/svg" width="16" height="40">
-      <path d='
-      M 0.42 1
-      L 0.3608 1
-      Q 0.2886 1 0.2526 0.938
-      L 0.0361 0.562
-      Q 0 0.5 0.0361 0.438
-      L 0.2526 0.062
-      Q 0.2886 0 0.3608 0
-      L 0.42 0
-      Z
-      ' />
-    </svg>
-    <svg viewBox="0 0 0.4 1" class="nav-photo" xmlns="http://www.w3.org/2000/svg" width="16" height="40">
-      <path d='
-      M 0 1
-      L 0.0592 1
-      Q 0.1314 1 0.1674 0.938
-      L 0.3839 0.562
-      Q 0.42 0.5 0.3839 0.438
-      L 0.1674 0.062
-      Q 0.1314 0 0.0592 0
-      L 0 0
-      Z
-      ' />
-    </svg>
     <section id="intro">
       <p>I'm a full-stack web developer, focused on front-end mechanics, client-server communication, authentication,
         and back-end session and data management.</p>
@@ -124,13 +96,23 @@
         organization (or someone else's), please let me know!</p>
     </section>
     <section id="skills">
-      <h2>Skills</h2>
-      ReactJS, Redux, MobX, React-Router, TypeScript, Node.js, Express, API/REST, Authentication (Local,
-      OAuth2/3rd-party), SQL (raw, w/ Knex.js, or w/ Sequelize ORM), MongoDB, Redis, Git, JavaScript, HTML, CSS, Sass,
-      AngularJS, JQuery, Mocha, Chai, Java (SE)
+      <div class="main-title-row">
+        <div class="main-title-divider"></div>
+        <svg class="main-title-bracket-left" viewBox="0 0 0.5 1"></svg>
+        <div class="main-title-label">Skills</div>
+        <svg class="main-title-bracket-right" viewBox="0 0 0.5 1"></svg>
+        <div class="main-title-divider"></div>
+      </div>
+      <div id="skills-list"></div>
     </section>
     <section id="projects">
-      <h2>Projects</h2>
+      <div class="main-title-row">
+        <div class="main-title-divider"></div>
+        <svg class="main-title-bracket-left" viewBox="0 0 0.5 1"></svg>
+        <div class="main-title-label">Projects</div>
+        <svg class="main-title-bracket-right" viewBox="0 0 0.5 1"></svg>
+        <div class="main-title-divider"></div>
+      </div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec nulla ultricies mauris dignissim consequat.
       Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean ac turpis ut urna ultrices mollis. Fusce
       justo urna, eleifend eu lorem quis, placerat ultricies purus. In finibus tempus dapibus. Quisque orci tortor,
@@ -155,7 +137,13 @@
       amet accumsan mauris.
     </section>
     <section id="education">
-      <h2>Education</h2>
+      <div class="main-title-row">
+        <div class="main-title-divider"></div>
+        <svg class="main-title-bracket-left" viewBox="0 0 0.5 1"></svg>
+        <div class="main-title-label">Education</div>
+        <svg class="main-title-bracket-right" viewBox="0 0 0.5 1"></svg>
+        <div class="main-title-divider"></div>
+      </div>
     </section>
   </main>
   <script src="js/index.js"></script>

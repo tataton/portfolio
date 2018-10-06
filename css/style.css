@@ -152,13 +152,17 @@ div.nav-chooser-active:hover {
 main {
   position: absolute;
   left: 200px;
+  top: 0px;
   color: black;
   background-color: white;
 }
 
 main section {
   padding: 10px 20px;
-  margin: 20px 0;
+  margin: 10px 0;
+}
+
+main section p {
   text-align: justify;
 }
 
@@ -166,26 +170,71 @@ main section {
   background-color: #d9e7fc;
 }
 
-h2 {
-  width: 100%;
-  margin: 0.5em auto;
-  overflow: hidden;
-  text-align: center;
-  font-weight: 300;
-  color: black;
+.main-title-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 0 -20px 15px -20px;
 }
 
-h2:before,
-h2:after {
-  content: '';
+.main-title-divider {
+  background-color: #2d4d7d;
   display: inline-block;
-  width: 50%;
-  margin: 0 1em 0 -55%;
-  vertical-align: middle;
-  border-bottom: 1px solid;
+  flex-grow: 1;
+  height: 2px;
 }
-h2:after {
-  margin: 0 -55% 0 1em;
+
+.main-title-label {
+  display: inline-block;
+  color: white;
+  background-color: #2d4d7d;
+  height: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.main-title-bracket-left,
+.main-title-bracket-right {
+  width: 20px;
+  height: 40px;
+  fill: #2d4d7d;
+  display: inline-block;
+}
+
+#skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+#skills-list:after {
+  content: '';
+  flex: auto;
+}
+
+.skills-skill {
+  display: table;
+  height: 28px;
+  margin: 5px 0;
+}
+
+.skills-bracket-svg {
+  display: table-cell;
+  width: 14px;
+  height: 28px;
+  fill: #dddddd;
+}
+
+.skills-label {
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+  height: 28px;
+  vertical-align: middle;
+  background: #dddddd;
+  font-size: 14px;
 }
 
 section.content-1 {
