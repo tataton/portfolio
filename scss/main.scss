@@ -1,0 +1,253 @@
+$color-software-dark: #2d4d7d;
+$color-software-light: #d9e7fc;
+$color-chemistry-dark: #b13c3c;
+$color-chemistry-light: #ffc2c2;
+$color-white: #ffffff;
+$color-black: #000000;
+
+@mixin software-link {
+  color: $color-software-light;
+  text-decoration: none;
+  &:hover {
+    color: $color-white;
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  background-color: $color-white;
+  position: relative;
+}
+
+nav {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 20rem;
+  overflow-x: hidden;
+  color: $color-white;
+}
+
+main {
+  position: absolute;
+  left: 200px;
+  top: 0px;
+  color: $color-black;
+  background-color: $color-white;
+
+  & section {
+    padding: 10px 20px;
+    margin: 10px 0;
+
+    & p {
+      text-align: justify;
+    }
+  }
+}
+
+.nav-panel {
+  position: absolute;
+  height: 100%;
+  width: 20rem;
+  top: 0;
+  padding-top: 1.5rem;
+  line-height: 1.3;
+
+  &--software {
+    background-color: $color-software-dark;
+  }
+
+  &--chemistry {
+    background-color: $color-chemistry-dark;
+  }
+
+  &--visible {
+    left: 0;
+    transition: left 1s ease;
+    z-index: 2;
+  }
+
+  &--hidden {
+    left: -20rem;
+    transition: left 1s ease;
+  }
+
+  &__photo {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__name > h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  &__occupation {
+    text-align: center;
+  }
+
+  &__contact-links {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1rem;
+
+    & > a {
+      @include software-link;
+      display: inline-block;
+      margin: 0 6px;
+    }
+  }
+
+  &__headings {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 30px;
+    text-transform: uppercase;
+
+    & > a {
+      @include software-link;
+      display: block;
+      margin: 5px 0;
+    }
+  }
+}
+
+.nav-chooser {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 200px;
+  font-size: 18px;
+  text-align: center;
+  z-index: 3;
+
+  &--software {
+    background-color: $color-software-dark;
+  }
+
+  &--chemistry {
+    background-color: $color-chemistry-dark;
+  }
+
+  &--active {
+    cursor: pointer;
+
+    &.nav-chooser--software {
+      color: $color-software-light;
+    }
+
+    &.nav-chooser--chemistry {
+      color: $color-chemistry-light;
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &__content {
+    padding: 10px 0;
+    line-height: 1.1;
+  }
+
+  &__prefix {
+    font-size: 12px;
+  }
+}
+
+.main-title {
+  &__row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 0 -20px 15px -20px;
+  }
+
+  &__divider {
+    background-color: $color-software-dark;
+    display: inline-block;
+    flex-grow: 1;
+    height: 2px;
+  }
+
+  &__label {
+    display: inline-block;
+    color: $color-white;
+    background-color: $color-software-dark;
+    height: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__bracket--left,
+  &__bracket--right {
+    width: 20px;
+    height: 40px;
+    fill: $color-software-dark;
+    display: inline-block;
+  }
+}
+
+.skills {
+  &__skill {
+    display: table;
+    height: 28px;
+    margin: 5px 0;
+  }
+  &__bracket {
+    display: table-cell;
+    width: 14px;
+    height: 28px;
+    fill: #dddddd;
+  }
+  &__label {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    height: 28px;
+    vertical-align: middle;
+    background: #dddddd;
+    font-size: 14px;
+  }
+}
+
+#availability {
+  background-color: $color-software-light;
+}
+
+#skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px;
+
+  &::after {
+    content: '';
+    flex: auto;
+  }
+}
+
+section.content-1 {
+  background-color: #f29999;
+}

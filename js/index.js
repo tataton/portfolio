@@ -1,21 +1,21 @@
 /* ------ Software <-> Chemistry view toggle ------ */
 
 // Software/chemistry toggle elements
-const showChemistryButton = document.querySelector('.nav-chooser-chemistry');
-const showSoftwareButton = document.querySelector('.nav-chooser-software');
-let softwarePanelClass = document.querySelector('.nav-panel-software')
+const showChemistryButton = document.querySelector('.nav-chooser--chemistry');
+const showSoftwareButton = document.querySelector('.nav-chooser--software');
+let softwarePanelClass = document.querySelector('.nav-panel--software')
   .classList;
-let chemistryPanelClass = document.querySelector('.nav-panel-chemistry')
+let chemistryPanelClass = document.querySelector('.nav-panel--chemistry')
   .classList;
 
 const switchView = () => {
   // Switch which panel and button is active
-  softwarePanelClass.toggle('nav-panel-hidden');
-  softwarePanelClass.toggle('nav-panel-visible');
-  chemistryPanelClass.toggle('nav-panel-visible');
-  chemistryPanelClass.toggle('nav-panel-hidden');
-  showSoftwareButton.classList.toggle('nav-chooser-active');
-  showChemistryButton.classList.toggle('nav-chooser-active');
+  softwarePanelClass.toggle('nav-panel--hidden');
+  softwarePanelClass.toggle('nav-panel--visible');
+  chemistryPanelClass.toggle('nav-panel--visible');
+  chemistryPanelClass.toggle('nav-panel--hidden');
+  showSoftwareButton.classList.toggle('nav-chooser--active');
+  showChemistryButton.classList.toggle('nav-chooser--active');
   if (isSoftwareActive) {
     showSoftwareButton.addEventListener('click', switchView);
     showChemistryButton.removeEventListener('click', switchView);
@@ -46,9 +46,11 @@ const insertPathEl = (svgEl, type) => {
 };
 
 ['left', 'right'].forEach(type => {
-  document.querySelectorAll('.main-title-bracket-' + type).forEach(element => {
-    insertPathEl(element, type);
-  });
+  document
+    .querySelectorAll('.main-title__bracket--' + type)
+    .forEach(element => {
+      insertPathEl(element, type);
+    });
 });
 
 /* ------ Generate skills selectors ------ */
@@ -84,20 +86,19 @@ const skillsArray = [
   'responsive'
 ];
 
-const skillsList = document.getElementById('skills-list');
-
+const skillsList = document.getElementById('skills__list');
+const skillsBracketString = type =>
+  `<svg class="skills__bracket" viewBox="0 0 0.5 1"><path d="${
+    bracketStrings[type]
+  }" /></svg>`;
 skillsArray.sort().forEach(entry => {
   const skill = document.createElement('div');
-  skill.className = 'skills-skill';
-  skill.innerHTML = `<svg class="skills-bracket-svg" viewBox="0 0 0.5 1">
-    <path d="${bracketStrings.left}" />
-  </svg>
-  <div class='skills-label'>
+  skill.className = 'skills__skill';
+  skill.innerHTML = `${skillsBracketString('left')}
+  <div class='skills__label'>
     ${entry}
   </div>
-  <svg class="skills-bracket-svg" viewBox="0 0 0.5 1">
-    <path d="${bracketStrings.right}" />
-  </svg>`;
+  ${skillsBracketString('right')}`;
   skillsList.insertAdjacentElement('beforeend', skill);
   // Can include skill.addEventListener() here, inside loop.
   // When you do, make sure to add :hover CSS.
