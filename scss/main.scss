@@ -13,6 +13,14 @@ $color-black: #000000;
   }
 }
 
+@mixin chemistry-link {
+  color: $color-chemistry-light;
+  text-decoration: none;
+  &:hover {
+    color: $color-white;
+  }
+}
+
 *,
 *::after,
 *::before {
@@ -72,10 +80,20 @@ main {
 
   &--software {
     background-color: $color-software-dark;
+
+    & .nav-panel__contact-links > a,
+    & .nav-panel__headings > a {
+      @include software-link;
+    }
   }
 
   &--chemistry {
     background-color: $color-chemistry-dark;
+
+    & .nav-panel__contact-links > a,
+    & .nav-panel__headings > a {
+      @include chemistry-link;
+    }
   }
 
   &--visible {
@@ -111,7 +129,6 @@ main {
     margin-top: 1rem;
 
     & > a {
-      @include software-link;
       display: inline-block;
       margin: 0 6px;
     }
@@ -125,7 +142,6 @@ main {
     text-transform: uppercase;
 
     & > a {
-      @include software-link;
       display: block;
       margin: 5px 0;
     }
