@@ -29,8 +29,8 @@
   </svg>
   <nav>
     <div class="nav-panel nav-panel--software nav-panel--visible">
-      <svg class="nav-panel__photo" width="180" height="180">
-        <image href="img/taton-software.jpg" clip-path="url(#image-hexagonal)" width="180" height="180" />
+      <svg class="nav-panel__photo">
+        <image href="img/taton-software.jpg" clip-path="url(#image-hexagonal)" />
       </svg>
       <div class="nav-panel__name">
         <h1>Andy Taton</h1>
@@ -62,13 +62,13 @@
       </div>
     </div>
     <div class="nav-panel nav-panel--chemistry nav-panel--hidden">
-      <svg class="nav-photo" width="180" height="180">
-        <image href="img/taton-chemist.jpg" clip-path="url(#image-hexagonal)" width="180" height="180" />
+      <svg class="nav-panel__photo">
+        <image href="img/taton-chemist.jpg" clip-path="url(#image-hexagonal)" />
       </svg>
-      <div class="nav-panel-name">
+      <div class="nav-panel__name">
         <h1>Andy Taton</h1>
       </div>
-      <div class="nav-panel-contact">
+      <div class="nav-panel__contact-links">
 
       </div>
     </div>
@@ -85,66 +85,76 @@
     </div>
   </nav>
   <main>
-    <section id="intro">
-      <p>I'm a full-stack web developer, focused on front-end mechanics, client-server communication, authentication,
-        and back-end session and data management.</p>
-    </section>
-    <section id="availability">
-      <p><b>I'm currently available for hire!</b></p>
-      <p>If you like what you see here, and
-        you think I might be a good fit for your
-        organization (or someone else's), please let me know!</p>
-    </section>
-    <section id="skills">
-      <div class="main-title__row">
-        <div class="main-title__divider"></div>
-        <svg class="main-title__bracket--left" viewBox="0 0 0.5 1"></svg>
-        <div class="main-title__label">Skills</div>
-        <svg class="main-title__bracket--right" viewBox="0 0 0.5 1"></svg>
-        <div class="main-title__divider"></div>
-      </div>
-      <div id="skills__list"></div>
-    </section>
-    <section id="projects">
-      <div class="main-title__row">
-        <div class="main-title__divider"></div>
-        <svg class="main-title__bracket--left" viewBox="0 0 0.5 1"></svg>
-        <div class="main-title__label">Projects</div>
-        <svg class="main-title__bracket--right" viewBox="0 0 0.5 1"></svg>
-        <div class="main-title__divider"></div>
-      </div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec nulla ultricies mauris dignissim consequat.
-      Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean ac turpis ut urna ultrices mollis. Fusce
-      justo urna, eleifend eu lorem quis, placerat ultricies purus. In finibus tempus dapibus. Quisque orci tortor,
-      pharetra ut placerat eget, tincidunt tincidunt enim. Maecenas et felis id lacus fermentum rhoncus vel nec augue.
-      Nunc ac dui eleifend, ultrices nibh non, blandit neque.
+    <div class="main-panel main-panel--software main-panel--visible">
+      <section id="intro">
+        <p>I'm a full-stack web developer, focused on front-end mechanics, client-server communication, authentication,
+          and back-end session and data management.</p>
+      </section>
+      <section id="availability">
+        <p><b>I'm currently available for hire!</b></p>
+        <p>If you like what you see here, and
+          you think I might be a good fit for your
+          organization (or someone else's), please let me know!</p>
+      </section>
+      <section id="skills">
+        <div class="main-title__row">
+          <div class="main-title__divider"></div>
+          <svg class="main-title__bracket--left" viewBox="0 0 0.5 1"></svg>
+          <div class="main-title__label">Skills</div>
+          <svg class="main-title__bracket--right" viewBox="0 0 0.5 1"></svg>
+          <div class="main-title__divider"></div>
+        </div>
+        <div id="skills__list"></div>
+      </section>
+      <section id="projects">
+        <div class="main-title__row">
+          <div class="main-title__divider"></div>
+          <svg class="main-title__bracket--left" viewBox="0 0 0.5 1"></svg>
+          <div class="main-title__label">Projects</div>
+          <svg class="main-title__bracket--right" viewBox="0 0 0.5 1"></svg>
+          <div class="main-title__divider"></div>
+        </div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec nulla ultricies mauris dignissim consequat.
+        Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean ac turpis ut urna ultrices mollis. Fusce
+        justo urna, eleifend eu lorem quis, placerat ultricies purus. In finibus tempus dapibus. Quisque orci tortor,
+        pharetra ut placerat eget, tincidunt tincidunt enim. Maecenas et felis id lacus fermentum rhoncus vel nec
+        augue.
+        Nunc ac dui eleifend, ultrices nibh non, blandit neque.
 
-      Donec tincidunt neque et massa dignissim, eget viverra quam aliquam. Proin ac arcu quam. Vivamus consequat semper
-      lacinia. In faucibus tortor in lorem sollicitudin maximus. Nulla congue quis libero vel tempor. Morbi feugiat est
-      elit, id accumsan ex rhoncus ac. Cras tincidunt bibendum purus, vitae malesuada justo accumsan vel. Proin finibus
-      sagittis volutpat. Quisque feugiat porta enim, sit amet sagittis leo euismod vel. Etiam non risus orci. Donec
-      dictum tincidunt molestie. Pellentesque elementum luctus arcu. Nulla urna eros, congue vitae quam at, fringilla
-      eleifend ipsum. Nullam et varius diam. Pellentesque ultrices elit vitae nulla commodo fermentum placerat vel
-      risus.
+        Donec tincidunt neque et massa dignissim, eget viverra quam aliquam. Proin ac arcu quam. Vivamus consequat
+        semper
+        lacinia. In faucibus tortor in lorem sollicitudin maximus. Nulla congue quis libero vel tempor. Morbi feugiat
+        est
+        elit, id accumsan ex rhoncus ac. Cras tincidunt bibendum purus, vitae malesuada justo accumsan vel. Proin
+        finibus
+        sagittis volutpat. Quisque feugiat porta enim, sit amet sagittis leo euismod vel. Etiam non risus orci. Donec
+        dictum tincidunt molestie. Pellentesque elementum luctus arcu. Nulla urna eros, congue vitae quam at, fringilla
+        eleifend ipsum. Nullam et varius diam. Pellentesque ultrices elit vitae nulla commodo fermentum placerat vel
+        risus.
 
-      Praesent rutrum mi arcu, eget pharetra mi mattis sit amet. In dolor nunc, volutpat rutrum nulla sed, luctus
-      lobortis neque. Cras dignissim ligula vitae purus pulvinar sollicitudin. Etiam in aliquet magna. Vestibulum ante
-      ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent volutpat iaculis massa vel
-      pulvinar. Duis quis tortor id neque malesuada pharetra ut interdum mauris. Suspendisse facilisis felis nec mauris
-      convallis tincidunt. Proin purus justo, interdum quis pharetra sit amet, porttitor a leo. Suspendisse ac sem eget
-      arcu venenatis dignissim. Sed tincidunt metus neque. Fusce quis molestie tellus. Nullam vestibulum purus eget
-      elit feugiat fermentum. Praesent mauris elit, scelerisque a consequat pharetra, ultricies quis ante. Aenean sit
-      amet accumsan mauris.
-    </section>
-    <section id="education">
-      <div class="main-title__row">
-        <div class="main-title__divider"></div>
-        <svg class="main-title__bracket--left" viewBox="0 0 0.5 1"></svg>
-        <div class="main-title__label">Education</div>
-        <svg class="main-title__bracket--right" viewBox="0 0 0.5 1"></svg>
-        <div class="main-title__divider"></div>
-      </div>
-    </section>
+        Praesent rutrum mi arcu, eget pharetra mi mattis sit amet. In dolor nunc, volutpat rutrum nulla sed, luctus
+        lobortis neque. Cras dignissim ligula vitae purus pulvinar sollicitudin. Etiam in aliquet magna. Vestibulum
+        ante
+        ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent volutpat iaculis massa vel
+        pulvinar. Duis quis tortor id neque malesuada pharetra ut interdum mauris. Suspendisse facilisis felis nec
+        mauris
+        convallis tincidunt. Proin purus justo, interdum quis pharetra sit amet, porttitor a leo. Suspendisse ac sem
+        eget
+        arcu venenatis dignissim. Sed tincidunt metus neque. Fusce quis molestie tellus. Nullam vestibulum purus eget
+        elit feugiat fermentum. Praesent mauris elit, scelerisque a consequat pharetra, ultricies quis ante. Aenean sit
+        amet accumsan mauris.
+      </section>
+      <section id="education">
+        <div class="main-title__row">
+          <div class="main-title__divider"></div>
+          <svg class="main-title__bracket--left" viewBox="0 0 0.5 1"></svg>
+          <div class="main-title__label">Education</div>
+          <svg class="main-title__bracket--right" viewBox="0 0 0.5 1"></svg>
+          <div class="main-title__divider"></div>
+        </div>
+      </section>
+    </div>
+    <div class="main-panel main-panel--chemistry main-panel--hidden"></div>
   </main>
   <script src="js/index.js"></script>
 </body>

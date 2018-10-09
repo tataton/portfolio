@@ -23,20 +23,28 @@ nav {
   left: 0;
   height: 100%;
   width: 20rem;
-  overflow-x: hidden;
   color: #ffffff; }
+  @media (max-width: 37.5em) {
+    nav {
+      position: absolute;
+      width: 100%;
+      height: 30rem; } }
 
 main {
-  position: absolute;
-  left: 200px;
-  top: 0px;
   color: #000000;
-  background-color: #ffffff; }
-  main section {
-    padding: 10px 20px;
-    margin: 10px 0; }
-    main section p {
-      text-align: justify; }
+  background-color: #ffffff;
+  width: calc(100% - 20rem); }
+  @media (max-width: 37.5em) {
+    main {
+      position: absolute;
+      width: 100%;
+      top: 35rem; } }
+
+section {
+  padding: 1rem 2rem;
+  margin: 1rem 0; }
+  section p {
+    text-align: justify; }
 
 .nav-panel {
   position: absolute;
@@ -45,20 +53,48 @@ main {
   top: 0;
   padding-top: 1.5rem;
   line-height: 1.3; }
+  @media (max-width: 37.5em) {
+    .nav-panel {
+      position: absolute;
+      width: 100%; } }
   .nav-panel--software {
     background-color: #2d4d7d; }
+    .nav-panel--software .nav-panel__contact-links > a,
+    .nav-panel--software .nav-panel__headings > a {
+      color: #d9e7fc;
+      text-decoration: none; }
+      .nav-panel--software .nav-panel__contact-links > a:hover,
+      .nav-panel--software .nav-panel__headings > a:hover {
+        color: #ffffff; }
   .nav-panel--chemistry {
     background-color: #b13c3c; }
+    .nav-panel--chemistry .nav-panel__contact-links > a,
+    .nav-panel--chemistry .nav-panel__headings > a {
+      color: #ffc2c2;
+      text-decoration: none; }
+      .nav-panel--chemistry .nav-panel__contact-links > a:hover,
+      .nav-panel--chemistry .nav-panel__headings > a:hover {
+        color: #ffffff; }
   .nav-panel--visible {
     left: 0;
     transition: left 1s ease;
     z-index: 2; }
   .nav-panel--hidden {
-    left: -20rem;
+    left: calc(-1 * 20rem);
     transition: left 1s ease; }
+    @media (max-width: 37.5em) {
+      .nav-panel--hidden.nav-panel--software {
+        left: -100%; }
+      .nav-panel--hidden.nav-panel--chemistry {
+        left: 100%; } }
   .nav-panel__photo {
     display: block;
+    height: 18rem;
+    width: 18rem;
     margin: 0 auto; }
+    .nav-panel__photo image {
+      height: 18rem;
+      width: 18rem; }
   .nav-panel__name > h1 {
     font-size: 2.8rem;
     font-weight: 700;
@@ -71,34 +107,36 @@ main {
     font-size: 2rem;
     margin-top: 1rem; }
     .nav-panel__contact-links > a {
-      color: #d9e7fc;
-      text-decoration: none;
       display: inline-block;
-      margin: 0 6px; }
-      .nav-panel__contact-links > a:hover {
-        color: #ffffff; }
+      margin: 0 0.6rem; }
   .nav-panel__headings {
     text-align: left;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin: 30px;
+    margin: 3rem;
     text-transform: uppercase; }
     .nav-panel__headings > a {
-      color: #d9e7fc;
-      text-decoration: none;
       display: block;
-      margin: 5px 0; }
-      .nav-panel__headings > a:hover {
-        color: #ffffff; }
+      margin: 0.5rem 0; }
+    @media (max-width: 37.5em) {
+      .nav-panel__headings {
+        display: none; } }
 
 .nav-chooser {
   position: fixed;
-  bottom: 0px;
-  left: 0px;
-  width: 200px;
-  font-size: 18px;
+  bottom: 0;
+  left: 0;
+  width: 20rem;
+  font-size: 1.8rem;
   text-align: center;
   z-index: 3; }
+  @media (max-width: 37.5em) {
+    .nav-chooser {
+      position: absolute;
+      display: flex;
+      top: 30rem;
+      bottom: unset;
+      width: 100%; } }
   .nav-chooser--software {
     background-color: #2d4d7d; }
   .nav-chooser--chemistry {
@@ -110,59 +148,92 @@ main {
     .nav-chooser--active.nav-chooser--chemistry {
       color: #ffc2c2; }
     .nav-chooser--active:hover {
-      color: white; }
+      color: #ffffff; }
   .nav-chooser__content {
-    padding: 10px 0;
+    padding: 1rem 0;
     line-height: 1.1; }
+    @media (max-width: 37.5em) {
+      .nav-chooser__content {
+        width: 50%; } }
   .nav-chooser__prefix {
-    font-size: 12px; }
+    font-size: 1.2rem; }
+
+.main-panel {
+  position: absolute;
+  top: 0px;
+  width: calc(100% - 20rem); }
+  @media (max-width: 37.5em) {
+    .main-panel {
+      width: 100%; } }
+  .main-panel--visible {
+    left: 20rem;
+    transition: left 1s ease;
+    z-index: 2; }
+    @media (max-width: 37.5em) {
+      .main-panel--visible {
+        left: 0; } }
+  .main-panel--hidden {
+    left: 100%;
+    transition: left 1s ease; }
+    @media (max-width: 37.5em) {
+      .main-panel--hidden.nav-panel--software {
+        left: -100%; } }
+  .main-panel--software .main-title__divider,
+  .main-panel--software .main-title__label {
+    background-color: #2d4d7d; }
+  .main-panel--software .main-title__bracket--left,
+  .main-panel--software .main-title__bracket--right {
+    fill: #2d4d7d; }
+  .main-panel--chemistry .main-title__divider,
+  .main-panel--chemistry .main-title__label {
+    background-color: #b13c3c; }
+  .main-panel--chemistry .main-title__bracket--left,
+  .main-panel--chemistry .main-title__bracket--right {
+    fill: #b13c3c; }
 
 .main-title__row {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  margin: 0 -20px 15px -20px; }
+  margin: 0 -2rem 1.5rem -2rem; }
 
 .main-title__divider {
-  background-color: #2d4d7d;
   display: inline-block;
   flex-grow: 1;
-  height: 2px; }
+  height: 0.2rem; }
 
 .main-title__label {
   display: inline-block;
   color: #ffffff;
-  background-color: #2d4d7d;
-  height: 40px;
-  line-height: 40px;
+  height: 4rem;
+  line-height: 4rem;
   text-transform: uppercase;
   font-weight: 700; }
 
 .main-title__bracket--left, .main-title__bracket--right {
-  width: 20px;
-  height: 40px;
-  fill: #2d4d7d;
+  width: 2rem;
+  height: 4rem;
   display: inline-block; }
 
 .skills__skill {
   display: table;
-  height: 28px;
-  margin: 5px 0; }
+  height: 2.8rem;
+  margin: 0.5rem 0; }
 
 .skills__bracket {
   display: table-cell;
-  width: 14px;
-  height: 28px;
+  width: 1.4rem;
+  height: 2.8rem;
   fill: #dddddd; }
 
 .skills__label {
   display: table-cell;
   margin: 0;
   padding: 0;
-  height: 28px;
+  height: 2.8rem;
   vertical-align: middle;
   background: #dddddd;
-  font-size: 14px; }
+  font-size: 1.4rem; }
 
 #availability {
   background-color: #d9e7fc; }
@@ -171,7 +242,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 10px; }
+  margin: 1rem; }
   #skills__list::after {
     content: '';
     flex: auto; }

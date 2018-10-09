@@ -3,17 +3,23 @@
 // Software/chemistry toggle elements
 const showChemistryButton = document.querySelector('.nav-chooser--chemistry');
 const showSoftwareButton = document.querySelector('.nav-chooser--software');
-let softwarePanelClass = document.querySelector('.nav-panel--software')
-  .classList;
-let chemistryPanelClass = document.querySelector('.nav-panel--chemistry')
-  .classList;
+const softwareNavPanel = document.querySelector('.nav-panel--software');
+const chemistryNavPanel = document.querySelector('.nav-panel--chemistry');
+const softwareMainPanel = document.querySelector('.main-panel--software');
+const chemistryMainPanel = document.querySelector('.main-panel--chemistry');
 
 const switchView = () => {
+  const scrollElm = document.scrollingElement;
+  scrollElm.scrollIntoView({ behavior: 'smooth' });
   // Switch which panel and button is active
-  softwarePanelClass.toggle('nav-panel--hidden');
-  softwarePanelClass.toggle('nav-panel--visible');
-  chemistryPanelClass.toggle('nav-panel--visible');
-  chemistryPanelClass.toggle('nav-panel--hidden');
+  softwareNavPanel.classList.toggle('nav-panel--hidden');
+  softwareNavPanel.classList.toggle('nav-panel--visible');
+  chemistryNavPanel.classList.toggle('nav-panel--visible');
+  chemistryNavPanel.classList.toggle('nav-panel--hidden');
+  softwareMainPanel.classList.toggle('main-panel--hidden');
+  softwareMainPanel.classList.toggle('main-panel--visible');
+  chemistryMainPanel.classList.toggle('main-panel--visible');
+  chemistryMainPanel.classList.toggle('main-panel--hidden');
   showSoftwareButton.classList.toggle('nav-chooser--active');
   showChemistryButton.classList.toggle('nav-chooser--active');
   if (isSoftwareActive) {
