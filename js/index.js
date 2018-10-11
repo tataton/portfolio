@@ -2,15 +2,14 @@
 
 // Software/chemistry toggle elements
 const showChemistryButton = document.querySelector('.nav-chooser--chemistry');
-const showSoftwareButton = document.querySelector('.nav-chooser--software');
 const softwareNavPanel = document.querySelector('.nav-panel--software');
 const chemistryNavPanel = document.querySelector('.nav-panel--chemistry');
 const softwareMainPanel = document.querySelector('.main-panel--software');
 const chemistryMainPanel = document.querySelector('.main-panel--chemistry');
 
-const switchView = () => {
+const switchView = event => {
   const scrollElm = document.scrollingElement;
-  scrollElm.scrollIntoView({ behavior: 'smooth' });
+  scrollElm.scrollTop = 0;
   // Switch which panel and button is active
   softwareNavPanel.classList.toggle('nav-panel--hidden');
   softwareNavPanel.classList.toggle('nav-panel--visible');
@@ -20,20 +19,17 @@ const switchView = () => {
   softwareMainPanel.classList.toggle('main-panel--visible');
   chemistryMainPanel.classList.toggle('main-panel--visible');
   chemistryMainPanel.classList.toggle('main-panel--hidden');
-  showSoftwareButton.classList.toggle('nav-chooser--active');
-  showChemistryButton.classList.toggle('nav-chooser--active');
-  if (isSoftwareActive) {
-    showSoftwareButton.addEventListener('click', switchView);
-    showChemistryButton.removeEventListener('click', switchView);
-  } else {
-    showChemistryButton.addEventListener('click', switchView);
-    showSoftwareButton.removeEventListener('click', switchView);
-  }
-  // Add eventListener to other button
-  isSoftwareActive = !isSoftwareActive;
+  const thisButton = event.currentTarget;
+  const siblingButton = event.currentTarget.nextElementSibling
+    ? event.currentTarget.nextElementSibling
+    : event.currentTarget.previousElementSibling;
+  thisButton.classList.toggle('nav-chooser--active');
+  siblingButton.classList.toggle('nav-chooser--active');
+  thisButton.removeEventListener('click', switchView);
+  siblingButton.addEventListener('click', switchView);
 };
+
 // Initialize state, button
-let isSoftwareActive = true;
 showChemistryButton.addEventListener('click', switchView);
 
 /* ------ Generate half-hexagon label brackets ------ */
@@ -89,7 +85,8 @@ const skillsArray = [
   'sql',
   'nosql',
   'svg',
-  'responsive'
+  'responsive',
+  'bootstrap'
 ];
 
 const skillsList = document.getElementById('skills__list');

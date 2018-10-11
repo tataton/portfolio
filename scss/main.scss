@@ -1,12 +1,15 @@
-$width-nav: 20rem;
+$width-nav-desktop: 20rem;
 
 $color-software-dark: #2d4d7d;
 $color-software-light: #d9e7fc;
+$color-software-verylight: #f4f6fa;
 $color-chemistry-dark: #b13c3c;
 $color-chemistry-light: #ffc2c2;
+$color-chemistry-verylight: #fff2f2;
 $color-white: #ffffff;
 $color-black: #000000;
 $color-gray-skill: #dddddd;
+$color-gray-divider: #dddddd;
 
 @mixin software-link {
   color: $color-software-light;
@@ -24,9 +27,17 @@ $color-gray-skill: #dddddd;
   }
 }
 
-@mixin respond-phone {
-  @media (max-width: 37.5em) {
-    @content;
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mini {
+    @media (max-width: 25em) {
+      @content;
+    }
   }
 }
 
@@ -39,7 +50,13 @@ $color-gray-skill: #dddddd;
 }
 
 html {
-  font-size: 10px;
+  font-size: 62.5%;
+  @include respond(phone) {
+    font-size: 60%;
+  }
+  @include respond(mini) {
+    font-size: 55%;
+  }
 }
 
 body {
@@ -49,6 +66,7 @@ body {
   line-height: 1.5;
   background-color: $color-white;
   position: relative;
+  height: 0;
 }
 
 nav {
@@ -57,21 +75,28 @@ nav {
   top: 0;
   left: 0;
   height: 100%;
-  width: $width-nav;
+  width: $width-nav-desktop;
   color: $color-white;
-  @include respond-phone {
-    position: absolute;
+  @include respond(phone) {
+    position: relative;
     width: 100%;
-    height: 30rem;
+    overflow-x: hidden;
+    height: 35rem;
   }
 }
 
 main {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 20rem;
+  top: 0;
   color: $color-black;
   background-color: $color-white;
-  width: calc(100% - #{$width-nav});
-  @include respond-phone {
+  width: calc(100% - #{$width-nav-desktop});
+  @include respond(phone) {
     position: absolute;
+    left: 0;
     width: 100%;
     top: 35rem;
   }
@@ -84,18 +109,22 @@ section {
   & p {
     text-align: justify;
   }
+
+  & > p:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 }
 
 .nav-panel {
   position: absolute;
   height: 100%;
-  width: $width-nav;
+  width: $width-nav-desktop;
   top: 0;
   padding-top: 1.5rem;
   line-height: 1.3;
-  @include respond-phone {
-    position: absolute;
+  @include respond(phone) {
     width: 100%;
+    overflow-x: hidden;
   }
 
   &--software {
@@ -123,27 +152,38 @@ section {
   }
 
   &--hidden {
-    left: calc(-1 * #{$width-nav});
+    left: calc(-1 * #{$width-nav-desktop});
     transition: left 1s ease;
-    @include respond-phone {
-      &.nav-panel--software {
-        left: -100%;
-      }
+    z-index: 0;
+    @include respond(phone) {
       &.nav-panel--chemistry {
         left: 100%;
+      }
+      &.nav-panel--software {
+        left: -100%;
       }
     }
   }
 
   &__photo {
     display: block;
-    height: 18rem;
-    width: 18rem;
+    height: 16rem;
+    width: 16rem;
     margin: 0 auto;
 
+    @include respond(phone) {
+      height: 15rem;
+      width: 15rem;
+    }
+
     & image {
-      height: 18rem;
-      width: 18rem;
+      height: 16rem;
+      width: 16rem;
+
+      @include respond(phone) {
+        height: 15rem;
+        width: 15rem;
+      }
     }
   }
 
@@ -181,7 +221,7 @@ section {
       margin: 0.5rem 0;
     }
 
-    @include respond-phone {
+    @include respond(phone) {
       display: none;
     }
   }
@@ -191,16 +231,15 @@ section {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: $width-nav;
+  width: $width-nav-desktop;
   font-size: 1.8rem;
   text-align: center;
   z-index: 3;
 
-  @include respond-phone {
+  @include respond(phone) {
     position: absolute;
     display: flex;
-    top: 30rem;
-    bottom: unset;
+    bottom: 0;
     width: 100%;
   }
 
@@ -231,7 +270,7 @@ section {
   &__content {
     padding: 1rem 0;
     line-height: 1.1;
-    @include respond-phone {
+    @include respond(phone) {
       width: 50%;
     }
   }
@@ -239,36 +278,39 @@ section {
   &__prefix {
     font-size: 1.2rem;
   }
+
+  &__linebreak {
+    display: none;
+
+    @include respond(mini) {
+      display: inline;
+    }
+  }
 }
 
 .main-panel {
-  position: absolute;
   top: 0px;
-  width: calc(100% - #{$width-nav});
-  @include respond-phone {
+  background-color: $color-white;
+  @include respond(phone) {
     width: 100%;
   }
 
   &--visible {
-    left: $width-nav;
-    transition: left 1s ease;
-    z-index: 2;
-    @include respond-phone {
-      left: 0;
-    }
+    order: 1;
+  }
+
+  &--divider {
+    order: 2;
+    height: 1rem;
+    background-color: $color-black;
   }
 
   &--hidden {
-    left: 100%;
-    transition: left 1s ease;
-    @include respond-phone {
-      &.nav-panel--software {
-        left: -100%;
-      }
-    }
+    order: 3;
   }
 
   &--software {
+    background-color: $color-software-verylight;
     & .main-title__divider,
     & .main-title__label {
       background-color: $color-software-dark;
@@ -281,6 +323,7 @@ section {
   }
 
   &--chemistry {
+    background-color: $color-chemistry-verylight;
     & .main-title__divider,
     & .main-title__label {
       background-color: $color-chemistry-dark;
@@ -363,6 +406,38 @@ section {
   }
 }
 
-section.content-1 {
-  background-color: #f29999;
+.education {
+  &__info-box {
+    margin: 1rem 0;
+  }
+  &__info-header {
+    display: flex;
+  }
+  &__info-divider {
+    height: 0.25rem;
+    background-color: $color-gray-divider;
+  }
+  &__logo,
+  &__info {
+    height: 10rem;
+    padding: 1rem;
+  }
+  &__school {
+    display: block;
+    line-height: 1.6rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  &__degree,
+  &__date {
+    display: block;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  &__description {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
 }

@@ -6,7 +6,13 @@
   box-sizing: border-box; }
 
 html {
-  font-size: 10px; }
+  font-size: 62.5%; }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 60%; } }
+  @media (max-width: 25em) {
+    html {
+      font-size: 55%; } }
 
 body {
   font-family: 'Lato', sans-serif;
@@ -14,7 +20,8 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   background-color: #ffffff;
-  position: relative; }
+  position: relative;
+  height: 0; }
 
 nav {
   position: fixed;
@@ -26,17 +33,24 @@ nav {
   color: #ffffff; }
   @media (max-width: 37.5em) {
     nav {
-      position: absolute;
+      position: relative;
       width: 100%;
-      height: 30rem; } }
+      overflow-x: hidden;
+      height: 35rem; } }
 
 main {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 20rem;
+  top: 0;
   color: #000000;
   background-color: #ffffff;
   width: calc(100% - 20rem); }
   @media (max-width: 37.5em) {
     main {
       position: absolute;
+      left: 0;
       width: 100%;
       top: 35rem; } }
 
@@ -45,6 +59,8 @@ section {
   margin: 1rem 0; }
   section p {
     text-align: justify; }
+  section > p:not(:last-child) {
+    margin-bottom: 1rem; }
 
 .nav-panel {
   position: absolute;
@@ -55,8 +71,8 @@ section {
   line-height: 1.3; }
   @media (max-width: 37.5em) {
     .nav-panel {
-      position: absolute;
-      width: 100%; } }
+      width: 100%;
+      overflow-x: hidden; } }
   .nav-panel--software {
     background-color: #2d4d7d; }
     .nav-panel--software .nav-panel__contact-links > a,
@@ -81,20 +97,29 @@ section {
     z-index: 2; }
   .nav-panel--hidden {
     left: calc(-1 * 20rem);
-    transition: left 1s ease; }
+    transition: left 1s ease;
+    z-index: 0; }
     @media (max-width: 37.5em) {
-      .nav-panel--hidden.nav-panel--software {
-        left: -100%; }
       .nav-panel--hidden.nav-panel--chemistry {
-        left: 100%; } }
+        left: 100%; }
+      .nav-panel--hidden.nav-panel--software {
+        left: -100%; } }
   .nav-panel__photo {
     display: block;
-    height: 18rem;
-    width: 18rem;
+    height: 16rem;
+    width: 16rem;
     margin: 0 auto; }
+    @media (max-width: 37.5em) {
+      .nav-panel__photo {
+        height: 15rem;
+        width: 15rem; } }
     .nav-panel__photo image {
-      height: 18rem;
-      width: 18rem; }
+      height: 16rem;
+      width: 16rem; }
+      @media (max-width: 37.5em) {
+        .nav-panel__photo image {
+          height: 15rem;
+          width: 15rem; } }
   .nav-panel__name > h1 {
     font-size: 2.8rem;
     font-weight: 700;
@@ -134,8 +159,7 @@ section {
     .nav-chooser {
       position: absolute;
       display: flex;
-      top: 30rem;
-      bottom: unset;
+      bottom: 0;
       width: 100%; } }
   .nav-chooser--software {
     background-color: #2d4d7d; }
@@ -157,39 +181,42 @@ section {
         width: 50%; } }
   .nav-chooser__prefix {
     font-size: 1.2rem; }
+  .nav-chooser__linebreak {
+    display: none; }
+    @media (max-width: 25em) {
+      .nav-chooser__linebreak {
+        display: inline; } }
 
 .main-panel {
-  position: absolute;
   top: 0px;
-  width: calc(100% - 20rem); }
+  background-color: #ffffff; }
   @media (max-width: 37.5em) {
     .main-panel {
       width: 100%; } }
   .main-panel--visible {
-    left: 20rem;
-    transition: left 1s ease;
-    z-index: 2; }
-    @media (max-width: 37.5em) {
-      .main-panel--visible {
-        left: 0; } }
+    order: 1; }
+  .main-panel--divider {
+    order: 2;
+    height: 1rem;
+    background-color: #000000; }
   .main-panel--hidden {
-    left: 100%;
-    transition: left 1s ease; }
-    @media (max-width: 37.5em) {
-      .main-panel--hidden.nav-panel--software {
-        left: -100%; } }
-  .main-panel--software .main-title__divider,
-  .main-panel--software .main-title__label {
-    background-color: #2d4d7d; }
-  .main-panel--software .main-title__bracket--left,
-  .main-panel--software .main-title__bracket--right {
-    fill: #2d4d7d; }
-  .main-panel--chemistry .main-title__divider,
-  .main-panel--chemistry .main-title__label {
-    background-color: #b13c3c; }
-  .main-panel--chemistry .main-title__bracket--left,
-  .main-panel--chemistry .main-title__bracket--right {
-    fill: #b13c3c; }
+    order: 3; }
+  .main-panel--software {
+    background-color: #f4f6fa; }
+    .main-panel--software .main-title__divider,
+    .main-panel--software .main-title__label {
+      background-color: #2d4d7d; }
+    .main-panel--software .main-title__bracket--left,
+    .main-panel--software .main-title__bracket--right {
+      fill: #2d4d7d; }
+  .main-panel--chemistry {
+    background-color: #fff2f2; }
+    .main-panel--chemistry .main-title__divider,
+    .main-panel--chemistry .main-title__label {
+      background-color: #b13c3c; }
+    .main-panel--chemistry .main-title__bracket--left,
+    .main-panel--chemistry .main-title__bracket--right {
+      fill: #b13c3c; }
 
 .main-title__row {
   display: flex;
@@ -247,5 +274,32 @@ section {
     content: '';
     flex: auto; }
 
-section.content-1 {
-  background-color: #f29999; }
+.education__info-box {
+  margin: 1rem 0; }
+
+.education__info-header {
+  display: flex; }
+
+.education__info-divider {
+  height: 0.25rem;
+  background-color: #dddddd; }
+
+.education__logo, .education__info {
+  height: 10rem;
+  padding: 1rem; }
+
+.education__school {
+  display: block;
+  line-height: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 700; }
+
+.education__degree, .education__date {
+  display: block;
+  line-height: 1.5rem;
+  font-size: 1.5rem;
+  margin-top: 0.5rem; }
+
+.education__description {
+  font-size: 1.4rem;
+  padding: 1rem; }
